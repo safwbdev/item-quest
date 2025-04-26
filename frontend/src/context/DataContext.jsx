@@ -40,7 +40,9 @@ const DataContext = (props) => {
     ]);
 
     useEffect(() => {
-        setCategories(lists.map(list => list.name))
+        setCategories(lists.map(list => {
+            return { id: list.id, name: list.name }
+        }))
     }, [lists])
 
 
